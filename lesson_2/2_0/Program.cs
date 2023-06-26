@@ -9,5 +9,5 @@ int showLastNum(int num) {
 
 int rand_num = new Random().Next(100, 1000);
 
-int last_num =showLastNum(rand_num);
+int last_num = showLastNum(rand_num);
 Console.WriteLine(last_num);
