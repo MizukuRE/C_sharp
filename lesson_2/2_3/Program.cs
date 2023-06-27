@@ -5,7 +5,7 @@
 // 46 -> нет
 // 161 -> да
 
-void multiple(int num) {
+static void multiple(int num) {
     if (num % 7 == 0 && num % 23 == 0)
         Console.WriteLine("да");
     else
