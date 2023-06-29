@@ -1,18 +1,31 @@
 ﻿// Напишите программу, которая принимает на вход число (N) 
 // и выдаёт таблицу квадратов чисел от 1 до N.
 
-void PowTable(int n) {
-    if (n == 0) {
-        Console.WriteLine("1");
-        return;
-    }
-
+void PowTable(int n)
+{
     int count = 1;
 
-    while (count <= n) {
-        Console.Write($"{Math.Pow(count, 2)}, ");
+    if (n == 0)
+    {
+        Console.WriteLine("1 0");
+        return;
+    }
+    else if (n > 0)
+    {
+        while (count <= n)
+        {
+            Console.Write($"{Math.Pow(count, 2)} ");
 
-        count++;
+            count++;
+        }
+    }
+    else {
+        while (count >= n)
+        {
+            Console.Write($"{Math.Pow(count, 2)} ");
+
+            count--;
+        }
     }
 }
 
