@@ -1,5 +1,6 @@
-﻿// 1. Напишите программу замена элементов массива:
-//    положительные элементы замените на соответствующие отрицательные, и наоборот.
+﻿// 4. Найдите произведение пар чисел в одномерном массиве.
+//    Парой считаем первый и последний элемент, второй и предпоследний
+//    и т.д. Результат запишите в новом массиве.
 
 int[] RandArr(int size, int begin, int end) {
     int[] result = new int[size];
@@ -19,9 +20,23 @@ void ShowArr(int[] arr) {
     }  
 }
 
-void Invert(int[] arr) {
-    for (int i = 0; i < arr.Length; i++)
-        arr[i] *= -1;
+int[] Composition(int[] arr) {
+    int size;
+    if (arr.Length % 2 == 0)
+        size = arr.Length / 2;
+    else
+        size = arr.Length / 2 + 1;
+    int[] result = new int[size];
+
+    for (int i = 0; i < size; i++) {
+        if (i == arr.Length - 1 - i) {
+            result[i] = arr[i];
+            break;
+        }
+        result[i] = arr[i] * arr[arr.Length - 1 - i];
+    }
+    
+    return result;
 }
 
 Console.WriteLine("Введите размер нужного массива: ");
@@ -34,5 +49,5 @@ int end = int.Parse(Console.ReadLine()!);
 int[] result = RandArr(size, begin, end);
 ShowArr(result);
 Console.WriteLine();
-Invert(result);
-ShowArr(result);
+int[] comp = Composition(result);
+ShowArr(comp);

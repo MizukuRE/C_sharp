@@ -1,5 +1,5 @@
-﻿// 1. Напишите программу замена элементов массива:
-//    положительные элементы замените на соответствующие отрицательные, и наоборот.
+﻿// 2. Задайте массив. Напишите программу, которая определяет,
+//    присутствует ли заданное число в массиве.
 
 int[] RandArr(int size, int begin, int end) {
     int[] result = new int[size];
@@ -19,9 +19,12 @@ void ShowArr(int[] arr) {
     }  
 }
 
-void Invert(int[] arr) {
-    for (int i = 0; i < arr.Length; i++)
-        arr[i] *= -1;
+string ToBeOrNot(int[] arr, int a) {
+    for (int i = 0; i < arr.Length; i++) {
+        if (arr[i] == a)
+            return "Да";
+    }
+    return "Нет";
 }
 
 Console.WriteLine("Введите размер нужного массива: ");
@@ -30,9 +33,9 @@ Console.WriteLine("Введите начало диапазона: ");
 int begin = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите конец диапазона: ");
 int end = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите искомое число: ");
+int number = int.Parse(Console.ReadLine()!);
 
 int[] result = RandArr(size, begin, end);
 ShowArr(result);
-Console.WriteLine();
-Invert(result);
-ShowArr(result);
+Console.WriteLine("\n" + ToBeOrNot(result, number));

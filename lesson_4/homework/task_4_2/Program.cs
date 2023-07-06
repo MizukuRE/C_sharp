@@ -20,10 +20,8 @@ void ShowArr(int[] arr) {
 
 Console.WriteLine("Введите размер нужного массива: ");
 int size = int.Parse(Console.ReadLine()!);
-
 Console.WriteLine("Введите начало диапазона: ");
 int begin = int.Parse(Console.ReadLine()!);
-
 Console.WriteLine("Введите конец диапазона: ");
 int end = int.Parse(Console.ReadLine()!);
 

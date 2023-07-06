@@ -1,5 +1,5 @@
-﻿// 1. Напишите программу замена элементов массива:
-//    положительные элементы замените на соответствующие отрицательные, и наоборот.
+﻿// 3. Задайте одномерный массив из 123 случайных чисел.
+//    Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
 
 int[] RandArr(int size, int begin, int end) {
     int[] result = new int[size];
@@ -19,9 +19,14 @@ void ShowArr(int[] arr) {
     }  
 }
 
-void Invert(int[] arr) {
+int Filter(int[] arr) {
+    int count = 0;
+
     for (int i = 0; i < arr.Length; i++)
-        arr[i] *= -1;
+        if (arr[i] >= 10 && arr[i] <= 99)
+            count++;
+    
+    return count;
 }
 
 Console.WriteLine("Введите размер нужного массива: ");
@@ -33,6 +38,4 @@ int end = int.Parse(Console.ReadLine()!);
 
 int[] result = RandArr(size, begin, end);
 ShowArr(result);
-Console.WriteLine();
-Invert(result);
-ShowArr(result);
+Console.WriteLine("\n" + Filter(result));
