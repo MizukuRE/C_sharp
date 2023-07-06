@@ -8,10 +8,8 @@
 int SumOfNum(int num) {
     int result = 0;
     
-    for (int i = 1; num > 0; i++) {
+    for (; num > 0; num /= 10)
         result += num % 10;
-        num /= 10;
-    }
 
     return result;
 }
