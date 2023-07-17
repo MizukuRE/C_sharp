@@ -31,7 +31,7 @@ void SearchEl(int[,] arr, int row, int column)
     int row_size = arr.GetLength(0);
     int column_size = arr.GetLength(1);
 
-    if (Math.Abs(row) > row_size || Math.Abs(column) > column_size) {
+    if (row > row_size || column > column_size || row <= 0 || column <= 0) {
         Console.WriteLine("Данной позиции нет в массиве");
         
         return;
