@@ -1,6 +1,6 @@
-﻿// 2. Задайте двумерный массив. Напишите программу,
-//    которая заменяет строки на столбцы. В случае, если это невозможно,
-//    программа должна вывести сообщение для пользователя.
+﻿// 3. Составить частотный словарь элементов двумерного массива.
+//    Частотный словарь содержит информацию о том, сколько раз 
+//    встречается элемент входных данных. Значения элементов массива 0..9
 
 void Print(int[,] arr)
 {
@@ -27,15 +27,21 @@ int[,] RandArr(int row, int column)
     return arr;
 }
 
-int[,] RotationArr(int[,] old_arr, int row, int column) 
-{
-    int[,] arr = new int[column, row];
+void FrequencyDict(int[,] arr) {
+    int row_size = arr.GetLength(0);
+    int column_size = arr.GetLength(1);
 
-    for (int i = 0; i < column; i++)      
-        for (int j = 0; j < row; j++)        
-            arr[i, j] = old_arr[j, i];                
-    
-    return arr;
+    for (int i = 0; i < 10; i++)
+    {
+        int count = 0;
+
+        foreach (int item in arr)
+            if (item == i)
+                count++;
+
+        Console.WriteLine($"{i}: {count}");
+    }
+    Console.WriteLine();
 }
 
 Console.Write("Enter the number of rows: ");
@@ -45,5 +51,5 @@ int column_num = int.Parse(Console.ReadLine()!);
 
 int[,] array = RandArr(row_num, column_num);
 Print(array);
-int[,] rot_array = RotationArr(array, row_num, column_num);
-Print(rot_array);
+
+FrequencyDict(array);
