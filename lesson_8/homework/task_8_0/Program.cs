@@ -28,7 +28,7 @@ int[,] SortRows(int[,] array) {
 
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-            for (int k = 0; k < columns - 1; k++)
+            for (int k = 0; k < columns - j - 1; k++)
                 if (array[i, k] < array[i, k + 1])
                     (array[i, k], array[i, k + 1]) = (array[i, k + 1], array[i, k]);
 

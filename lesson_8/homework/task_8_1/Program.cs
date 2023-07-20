@@ -36,7 +36,7 @@ void MinSumInRow(int[,] array) {
 
     int min = sums[0];
     int result = 0;
-    for (int i = 0; i < rows; i++) {
+    for (int i = 1; i < rows; i++) {
         if (sums[i] < min) {
             min = sums[i];
             result = i + 1;
